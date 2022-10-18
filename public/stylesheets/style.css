@@ -1,3 +1,9 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -5,4 +11,43 @@ body {
 
 a {
   color: #00B7FF;
+  text-decoration: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input,
+form button {
+  font-size: 14px;
+  padding: 4px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+form button {
+  background: #43a3e6;
+  border: 1px solid #43a3e6;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  padding: 8px 16px;
+  transition: 0.3s ease background;
+  width: 100%;
+}
+
+form button:hover {
+  background: #fff;
+  color: #43a3e6;
+  transition: 0.3s ease background;
+}
+
+.error {
+  background: #f02b63;
+  color: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  width: 100%;
 }
