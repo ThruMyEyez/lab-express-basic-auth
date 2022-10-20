@@ -51,3 +51,20 @@ form button:hover {
   padding: 20px;
   width: 100%;
 }
+
+#logout-form {
+  display: inline;
+  width: 0;
+}
+
+#logout-btn {
+  width: auto;
+  display: inline;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  color: #00B7FF;
+  text-decoration: none;
+  font: inherit;
+}

@@ -20,12 +20,13 @@ const path = require("path");
 /* !!! */
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
+const deserializeUserMiddleware = require("./../middleware/deserialize-user-middleware");
 /* !!! */
+
 // Middleware configuration
 module.exports = app => {
   // In development environment the app logs
   app.use(logger("dev"));
-
   // To have access to `body` property in the request
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
@@ -49,11 +50,13 @@ module.exports = app => {
       saveUninitialized: false,
       cookie: {
         httpOnly: true,
-        maxAge: 1000 * 60,
+        maxAge: 2000 * 60, // two minutes
       },
       store: MongoStore.create({
         mongoUrl: process.env.MONGODB_URI || "mongodb://localhost/lab-express-basic-auth",
       }),
     })
   );
+  // access User deserializer
+  app.use(deserializeUserMiddleware);
 };

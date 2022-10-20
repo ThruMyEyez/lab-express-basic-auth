@@ -1,4 +1,8 @@
-<h2>Welcome back to school</h2>
+{{#if user}}
+  <h2>Welcome back to school{{user.username}}</h2>
+{{else}}
+  <h2>Welcome back to school visitor</h2>
+{{/if}}
 
 <a href="/">
   <img src="/images/cat-algebra.jpg" alt="funny cat pic" style="width: 360px;" />
